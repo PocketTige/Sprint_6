@@ -1,29 +1,18 @@
 package ru.juli.practicum;
 
 import com.example.Feline;
-import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
 
-public class TestFeline extends BeforeTest{
-    private Feline feline;
+public class TestFeline {
 
-    @Before
-    public void init() {
-        feline = Mockito.spy(new Feline());
-    }
+Feline feline = new Feline();
     @Test
     public void eatMeat() throws Exception {
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
-        when(feline.getFood("Хищник")).thenReturn(expectedFood);
-
-        // Act
         List<String> actualFood = feline.eatMeat();
 
-        // Assert
         assertEquals(expectedFood, actualFood);
     }
 

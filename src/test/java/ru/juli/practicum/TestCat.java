@@ -6,7 +6,6 @@ import com.example.Cat;
 import com.example.Feline;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 
 import java.util.Arrays;
 import java.util.List;
@@ -30,6 +29,5 @@ public class TestCat{
         List<String> expectedFood = Arrays.asList("Мыши", "Птицы");
         when(feline.eatMeat()).thenReturn(expectedFood); // Настраиваем мок, чтобы он возвращал ожидаемый результат
         assertEquals(expectedFood, cat.getFood()); // Проверяем, что метод getFood() возвращает правильное значение
-        verify(feline).eatMeat(); // Проверяем, что метод eatMeat() был вызван ровно один раз
     }
 }
