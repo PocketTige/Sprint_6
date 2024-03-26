@@ -23,7 +23,7 @@ public class TestLionParameterized {
     }
 
     // Параметры для тестирования
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Пол: {0}; Есть грива: {1}")
     public static Object[] testConditions() {
         return new Object[][] {
                 {"Самец", true},
